@@ -4,7 +4,7 @@ allprojects {
         buildToolsVersion = isEnvCi ? "22.0.1" : "25.0.0"
         repoProvider = {
             if (!isEnvCi) {
-                maven { url "file:///c:/repo" }
+                maven { url "${rootDir}/repo" }
                 maven {
                     url 'http://maven.aliyun.com/nexus/content/groups/public/'
                 }
@@ -21,7 +21,7 @@ allprojects {
         repositories repoProvider
         dependencies {
             classpath 'com.android.tools.build:gradle:3.0.0'
-            classpath 'com.github.znyang:library-analysis:0.2.2'
+            classpath "com.github.znyang:library-analysis:0.2.2"
             classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.1.51"
         }
     }

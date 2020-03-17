@@ -56,6 +56,7 @@ class FileDictionary {
             return cacheFiles.get(dependencyId)
         }
 
+        System.println("dependencyId:" + dependencyId)
         def dependency = dependencyId.split("\\:")
         def size = dependency.size()
         def result = null
@@ -88,7 +89,7 @@ class FileDictionary {
         totalFindCount += count
 
         if (result != null) {
-//            Logger.W?.log "find result: " + result.path + " tcount:" + totalFindCount
+            Logger.W?.log "find result: " + result.path + " tcount:" + totalFindCount
             cacheFiles.put(dependencyId, result)
             files.remove(result)
         } else {
