@@ -1,11 +1,13 @@
 //if(VERSION_NAME.endsWith("-SNAPSHOT")){
-//if (!isLocalPlugin.toBoolean()) {
-    include ':analysis-sample', ':module-library'
+if (!IsLocalPlugin.toBoolean()) {
+    include ':analysis-sample'
     include ':kotlin-sample'
+
+    include ':module-library'
+    include ':module-aar'
+}
 //}
 
-//}
 // Sets the output JAR filename
 rootProject.name = 'library-analysis-gradle-plugin'
 include ':plugin'
-include ':module-aar'
